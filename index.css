@@ -62,7 +62,7 @@ nav a:hover {
 }
 
 .search-box button {
-    background-color: #333;
+    background-color: darkturquoise;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -104,47 +104,93 @@ h3{
 p {
     font-weight: bold;
     font-size: large;
+    margin-bottom: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
 /*pour la liste des service*/
 .service{
-    display: flex;
+    display: flex; 
+    list-style: none; 
+    gap: 50px;
+    justify-content: space-around;;
 }
-section ul {
+.service section ul {
     display: flex;
+    justify-content: space-around;;
 }
 
-section li {
+.service section li {
     padding: 20px;
     list-style: none;
+    margin-top: 30px;
+}
+.service p{
+    padding: 20px;
+    list-style: none;
+    margin-top: 30px;
 }
 
-/* liste image 1 */
-.image ul {
+/*choisir*/
+.choisir p{
+    padding: auto;
+    margin-left: 30px;
+}
+
+/* liste imageindex */
+.imageindex1 ul {
     display: flex; 
     list-style: none; 
-    padding: 0; 
+    padding: 30px;
+    justify-content: space-around;
+    
 }
 
 
-.image li img {
-    width: 100%; 
-    height: auto; 
+.imageindex1 li img {
+    width: 200px; 
+    height: 145px;
+    padding: auto;
+    border: 3px black;
+    border-radius: 2px;
 }
 
-/* liste imagehaut */
-.imagehaut ul {
-    display: flex; 
-    list-style: none; 
-    padding: 0; 
+/* liste imageentreprise */
+.imageentreprise ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 40px;
+    gap: 100px;
 }
 
-
-.imagehaut li img {
-    width: 300px; 
-    height: auto;
-    padding: auto; 
+.imageentreprise li {
+    margin: 30px 30px; 
+    text-align: center;
+    padding: 60px;
 }
+
+.imageentreprise li img {
+    width: 250px;
+    height: 250px;
+}
+
+@media (min-width: 768px) {
+    /* Media query pour établir une disposition 3x3 sur les écrans plus larges */
+    .imageentreprise ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .imageentreprise li {
+        margin: 10px; 
+        width: calc(33.33% - 20px); 
+    }
+}
+
 
 .separator { /*separateur visuel*/
     width: 100%;
