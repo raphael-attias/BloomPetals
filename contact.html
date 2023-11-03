@@ -30,7 +30,7 @@
         <div class="contact">
             <h2>Contactez-nous</h2>
         </div>
-        <form action="traitement.php" method="POST">
+        <form action="exemple.exemple" method="POST">
             <label for="civility">Civilité :</label>
             <select id="civility" name="civility">
                 <option value="monsieur">Monsieur</option>
@@ -38,31 +38,35 @@
             </select>
 
             <label for="firstname">Prénom :</label>
-            <input type="text" id="firstname" name="firstname" required>
+            <input type="text" id="firstname" name="firstname" placeholder="Ex : Jean" required>
 
             <label for="lastname">Nom :</label>
-            <input type="text" id="lastname" name="lastname" required>
+            <input type="text" id="lastname" name="lastname" placeholder="Ex : Dupont" required>
 
             <label for="email">Adresse e-mail :</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Ex : jean.dupont@example.com" required>
 
             <label for="telephone">Téléphone :</label>
-            <input type="tel" id="telephone" name="telephone" required>
+            <input type="tel" id="telephone" name="telephone" placeholder="Ex : 0123456789" required>
 
             <label for="street">Nom et Numéro de rue :</label>
-            <input type="text" id="street" name="street" required>
+            <input type="text" id="street" name="street" placeholder="Ex : 1 Rue de la République" required>
 
-            <label for="city">Code Postale et Ville :</label>
-            <input type="text" id="city" name="city" required>
+            <label for="city">Code Postal et Ville :</label>
+            <input type="text" id="city" name="city" placeholder="Ex : 13001 Marseille" required>
 
             <label for="country">Pays :</label>
-            <input type="text" id="country" name="country" required>
+            <input type="text" id="country" name="country" placeholder="Ex : France" required>
 
-            <label for="privacy">J'accepte les politiques de confidentialité :</label>
-            <input type="checkbox" id="privacy" name="privacy" required>
-            <br>
+            <label for="message">Votre demande :</label>
+            <input type="text" id="message" name="message"
+                placeholder="Ex : Votre message ici" required>
+
             <button type="submit">Envoyer</button>
         </form>
+
+        </form>
+
 
 
 
