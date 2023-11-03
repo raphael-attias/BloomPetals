@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 * {
     font-family: "Courier New", monospace;
@@ -13,13 +13,13 @@ header {
 }
 /* CSS dans votre fichier index.css */
 
-/* Style pour le menu de navigation */
+/* Style de base pour la barre de navigation */
 nav {
     display: flex;
-    justify-content: space-between; /* Place le contenu à l'extrémité gauche et droite */
-    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-around;
+    align-items: center;
     padding: 2px;
-    color: #fff; /* Couleur du texte dans le menu */
+    color: #fff;
     border-radius: 10px;
     background-color: darkturquoise;
 }
@@ -43,34 +43,63 @@ nav a {
     font-weight: bold;
     background-color: darkturquoise;
     color: whitesmoke;
-
 }
 
 /* Style au survol des liens */
 nav a:hover {
     text-decoration: underline;
     color: darkorchid;
+    background-color: darkturquoise;
 }
 
 /* Style pour la barre de recherche */
 .search-box {
     display: flex;
+    color: darkorchid;
+    background-color: darkturquoise;
 }
 
 .search-box input {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    color: darkorchid;
+
 }
 
 .search-box button {
     background-color: darkturquoise;
-    color: #fff;
+    color: darkorchid;
     border: none;
     border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
+
+/* Style au survol du bouton de recherche */
+.search-box button:hover {
+    background-color: #555;
+}
+
+/* Ajout de styles pour rendre la barre de navigation responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav li {
+        margin-right: 0;
+        
+    }
+}
+
 
 /* Style au survol du bouton de recherche */
 .search-box button:hover {
@@ -79,7 +108,6 @@ nav a:hover {
 
 /* page generale*/
 main {
-    margin-left: 30px;
     padding: 50px;
 }
 
@@ -157,20 +185,21 @@ p {
 
 /* liste imageindex */
 .imageindex1 ul {
-    display: flex; 
-    list-style: none; 
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
     padding: 30px;
     justify-content: space-around;
-    
+    gap: 20px; /* Espace entre les éléments */
 }
 
-
 .imageindex1 li img {
-    width: 200px; 
-    height: 145px;
-    padding: auto;
-    border: 3px black;
-    border-radius: 2px;
+    width: 80%; /* Les images occupent 100% de la largeur de leur conteneur */
+    max-height: 200px; /* Hauteur maximale pour les images */
+    border: 1px solid darkorchid;
+    border-radius: 5px;
+    padding: 10px; /* Espace interne autour des images */
+    box-sizing: border-box; /* Inclut la bordure dans les dimensions */
 }
 
 /* liste imageentreprise */
@@ -179,23 +208,31 @@ p {
     flex-direction: column;
     align-items: center;
     list-style: none;
-    padding: 40px;
-    gap: 100px;
+    gap: 20px;
+    max-width: 100%; 
 }
 
 .imageentreprise li {
-    margin: 30px 30px; 
+    margin: 30px 30px;
     text-align: center;
-    padding: 60px;
+    padding: 30px;
+    max-width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .imageentreprise li img {
-    width: 250px;
-    height: 250px;
+    width: 100%; /* Les images s'ajustent à la largeur de leur conteneur */
+    max-height: 250px; /* Hauteur maximale pour les images */
+    border: 1px solid darkorchid;
+    border-radius: 5px;
+    width: calc(75% - 30px); 
+    max-height: 400px; 
 }
 
 @media (min-width: 768px) {
-    /* Media query pour établir une disposition 3x3 sur les écrans plus larges */
     .imageentreprise ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -203,8 +240,10 @@ p {
     }
 
     .imageentreprise li {
-        margin: 10px; 
-        width: calc(33.33% - 20px); 
+        margin: 10px;
+        width: calc(33.33% - 20px);
+        max-width: none; 
+        text-align: center;
     }
 }
 
@@ -312,30 +351,23 @@ button:hover {
     text-align: left;
 }
 
-.telephone-input::before {
-    content: "";
-    width: 20px; /* Largeur de la case de sélection */
-    height: 20px; /* Hauteur de la case de sélection */
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    display: inline-block;
-    margin-right: 10px; /* Espace entre la case de sélection et le champ de saisie */
+.mosaique ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 10px; /* Espace entre les éléments */
 }
 
-/* disposition mosaique */
-
-@media (min-width: 768px) {
-    .mosaique ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0; /* Supprime la marge par défaut de la liste */
-    }
-
-    .mosaique li {
-        flex: 0 0 calc(33.33% - 20px); /* Ajuste la largeur de chaque élément */
-        margin: 10px;
-        list-style: none; /* Supprime les puces de liste */
-    }
+.mosaique img {
+    border: 1px solid darkorchid;
+    border-radius: 5px;
+    width: calc(75% - 30px); /* Ajuste la largeur de chaque élément et l'espace entre les éléments pour 4 colonnes */
+    max-height: 400px; /* Hauteur maximale pour les images */
+    object-fit: cover; /* Pour que l'image occupe tout l'espace disponible */
 }
 
+.mosaique li {
+    flex: 0 0 calc(25% - 20px); /* Ajuste la largeur de chaque élément et l'espace entre les éléments pour 4 colonnes */
+    margin: 5px;
+}
