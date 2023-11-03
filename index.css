@@ -1,3 +1,5 @@
+
+
 * {
     font-family: "Courier New", monospace;
     background-color: aliceblue;
@@ -81,12 +83,13 @@ main {
     padding: 50px;
 }
 
-
-h1 {
+@import url('https://fonts.cdnfonts.com/css/kaushan-script');
+.titre h1{
     text-align: center;
     margin-top: 15px;
     color: darkorchid;
-    font-size: 3em;
+    font-size: 4em;
+    font-family: 'Kaushan Script', cursive;
 }
 
 h2{
@@ -95,6 +98,10 @@ h2{
     margin-left: 50px;
     text-decoration: underline;
     color: darkorchid;
+}
+
+.contact h2{
+    text-align: center;
 }
 
 h3{
@@ -130,6 +137,16 @@ p {
     padding: 20px;
     list-style: none;
     margin-top: 30px;
+}
+.deroule {
+    max-height: 150px;
+    overflow: hidden;
+    transition: 10s ease;
+}
+
+.deroule:hover{
+    max-height:1000px;
+    transition: 5s ease ;
 }
 
 /*choisir*/
@@ -201,7 +218,124 @@ p {
 
 footer {
     background-color: darkturquoise;
+    color: darkorchid;
+    padding: 20px; 
+    border-radius: 10px;
+    
+}
+.bas {
+    background-color: darkturquoise;
+    color: darkorchid;
+    font-size: small;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* PAGE CONTACT FORMULAIRE */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: darkturquoise; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: darkorchid;
+}
+
+label {
+    background-color: darkturquoise;
+    color: darkorchid;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Style pour les zones de texte et les boutons */
+input[type="text"],
+select,
+input[type="email"],
+input[type="tel"] {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; 
+    text-align: left;
+    font-weight: bold;
+    font-size: larger;
+    color: darkorchid;
+}
+
+/* Style pour le bouton de validation */
+button {
+    background-color: darkorchid;
     color: darkturquoise;
-    padding: 40px; 
+    font-weight: bold;
+    font-size: larger;
+    border: none;
+    cursor: pointer;
     border-radius: 10px;
 }
+
+button:hover {
+    background-color: darkslategray;
+}
+
+
+/* Media query pour la mise en forme responsive */
+@media (max-width: 768px) {
+    form {
+        max-width: 100%; /* Boîte de contact prendra toute la largeur de l'écran */
+        padding: 10px; /* Ajustement de la marge interne pour les petits écrans */
+    }
+    
+    label {
+        margin-bottom: 5px; 
+    }
+}
+/* les region et entrer du telephone*/
+.telephone-input {
+    display: flex;
+    align-items: center;
+}
+
+.telephone-input input[type="tel"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px; /* Espace entre la case de sélection et le champ de saisie */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.telephone-input::before {
+    content: "";
+    width: 20px; /* Largeur de la case de sélection */
+    height: 20px; /* Hauteur de la case de sélection */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 10px; /* Espace entre la case de sélection et le champ de saisie */
+}
+
+/* disposition mosaique */
+
+@media (min-width: 768px) {
+    .mosaique ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0; /* Supprime la marge par défaut de la liste */
+    }
+
+    .mosaique li {
+        flex: 0 0 calc(33.33% - 20px); /* Ajuste la largeur de chaque élément */
+        margin: 10px;
+        list-style: none; /* Supprime les puces de liste */
+    }
+}
+
